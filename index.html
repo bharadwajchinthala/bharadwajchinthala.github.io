@@ -17,26 +17,63 @@
     .theme-toggle{border:1px solid var(--line);border-radius:999px;padding:8px 14px;background:var(--panel);color:var(--text);font:inherit;font-size:14px;font-weight:650;cursor:pointer;white-space:nowrap}.theme-toggle:hover{border-color:var(--accent)}.theme-toggle:focus-visible{outline:3px solid var(--accent);outline-offset:3px}.nav-actions{display:flex;align-items:center;gap:16px;flex-wrap:wrap}body,.card,.tag,.btn,header,.theme-toggle{transition:background-color .2s ease,color .2s ease,border-color .2s ease}
     @media(prefers-reduced-motion:reduce){body,.card,.tag,.btn,header,.theme-toggle{transition:none}html{scroll-behavior:auto}}
     @media(max-width:600px){.nav{align-items:flex-start;flex-direction:column;padding:17px 0;gap:9px}nav{gap:15px}.hero{padding:72px 0}h1{letter-spacing:-1.7px}section{padding:40px 0}}
+
+    /* Portfolio enhancements */
+    section[id],.hero[id]{scroll-margin-top:125px}
+    .hero{position:relative;max-width:920px;padding-top:105px;padding-bottom:75px}
+    .hero h1{max-width:850px;font-weight:800;letter-spacing:-.055em}
+    .hero .lead{max-width:720px}
+    .hero-kicker{display:inline-flex;align-items:center;gap:10px;background:var(--tag-bg);border:1px solid var(--tag-border);border-radius:999px;padding:7px 14px;color:var(--tag-text);font-size:13px;font-weight:700}
+    .hero-kicker:before{content:"";width:8px;height:8px;background:var(--accent);border-radius:50%;box-shadow:0 0 0 4px var(--tag-border)}
+    .hero-stats{display:flex;gap:28px;flex-wrap:wrap;margin-top:48px;padding-top:25px;border-top:1px solid var(--line)}
+    .stat strong{display:block;font-size:26px;line-height:1.2;letter-spacing:-.7px}
+    .stat span{color:var(--muted);font-size:13px}
+    .section-subtitle{max-width:680px;margin:-9px 0 26px}
+    .skill-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px}
+    .skill-card{border:1px solid var(--line);border-radius:16px;background:var(--card-a);padding:23px}
+    .skill-card h3{margin:0 0 14px;font-size:17px}
+    .skill-card .taglist{gap:8px}
+    .skill-card .tag{font-size:13px;padding:5px 11px}
+    .timeline{margin-left:9px;border-left:2px solid var(--line);padding-left:26px;display:grid;gap:22px}
+    .timeline-entry{position:relative}
+    .timeline-entry:before{content:"";position:absolute;left:-35px;top:29px;width:14px;height:14px;background:var(--accent);border:4px solid var(--bg);border-radius:50%;box-sizing:content-box}
+    .timeline-entry .card{padding:27px}
+    .timeline-entry .eyebrow{font-size:12px;letter-spacing:1.7px}
+    .company{color:var(--muted);font-weight:650}
+    .project-card{position:relative;overflow:hidden}
+    .project-card:after{content:"";position:absolute;right:-80px;top:-100px;width:220px;height:220px;border-radius:50%;background:var(--glow);pointer-events:none}
+    .project-card>*{position:relative;z-index:1}
+    .project-card .btn{margin-top:16px}
+    .btn:focus-visible,a:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+    @media(max-width:720px){.skill-grid{grid-template-columns:1fr}.hero-stats{gap:20px}.nav{align-items:flex-start}.hero{padding-top:70px}.stat strong{font-size:22px}}
   </style>
 </head>
 <body>
 <header><div class="wrap nav"><a class="logo" href="#home">BC<span>.</span></a><nav aria-label="Main navigation"><a href="#about">About</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#contact">Contact</a></nav><button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to light mode" aria-pressed="false">☀ Light</button></div></header>
 <main class="wrap">
   <div class="hero" id="home">
-    <div class="eyebrow">Data Engineering · Cloud · AI</div>
-    <h1>Hi, I'm Bharadwaj.<br><span>I build data systems.</span></h1>
-    <p class="lead">Data Engineer focused on designing, developing, and optimizing reliable cloud data pipelines and platforms. I enjoy turning complex data challenges into practical, scalable solutions.</p>
-    <div class="actions"><a class="btn primary" href="#projects">Explore my work ↗</a><a class="btn" href="https://github.com/bharadwajchinthala" target="_blank" rel="noopener noreferrer">View GitHub ↗</a></div>
+    <div class="hero-kicker">Data Engineering · Cloud · AI</div>
+    <h1>Turning complex data into <span>reliable systems.</span></h1>
+    <p class="lead">Hi, I'm <strong>Bharadwaj Chinthala</strong> — an AI Data Engineer who builds scalable data pipelines, transforms raw data into trusted analytics, and works across Azure, AWS, Snowflake, and Databricks.</p>
+    <div class="actions"><a class="btn primary" href="#projects">Explore my projects ↗</a><a class="btn" href="#experience">My experience ↓</a><a class="btn" href="https://www.linkedin.com/in/bharadwajreddy-ai-dataengineer/" target="_blank" rel="noopener noreferrer">Connect on LinkedIn ↗</a></div>
+    <div class="hero-stats" aria-label="Career highlights"><div class="stat"><strong>15–25M</strong><span>Records processed daily in current environment</span></div><div class="stat"><strong>~40%</strong><span>Databricks processing-time improvement</span></div><div class="stat"><strong>2</strong><span>Professional employers</span></div></div>
   </div>
   <section id="about"><div class="eyebrow">01 / About</div><h2>A little about me</h2><p>I work across data ingestion, processing, transformation, and quality, with experience using Azure and AWS data services, Snowflake, Databricks, Python, SQL, and PySpark. My focus is building dependable data workflows that support analytics and business needs.</p></section>
-  <section id="skills"><div class="eyebrow">02 / Skills</div><h2>Technologies I work with</h2><div class="taglist"><span class="tag">Python</span><span class="tag">SQL</span><span class="tag">PySpark</span><span class="tag">Azure Data Factory</span><span class="tag">Azure Databricks</span><span class="tag">Azure Synapse</span><span class="tag">Snowflake</span><span class="tag">dbt</span><span class="tag">AWS</span><span class="tag">Apache Kafka</span><span class="tag">GitHub Actions</span><span class="tag">Data Modeling</span></div></section>
-  <section id="experience"><div class="eyebrow">03 / Experience</div><h2>Professional experience</h2>
-    <div class="grid">
-      <article class="card"><div class="eyebrow">May 2025 – Present</div><h3>AI Data Engineer</h3><strong>Navitus Health Solutions</strong><p>Develop and maintain cloud-based data ingestion and ETL workflows using Azure Data Factory, Databricks, Synapse Analytics, PySpark, and SQL to support reliable analytics and business operations.</p><p>Work in an environment processing approximately 15–25 million records daily; optimized Databricks processing time by approximately 40%.</p></article>
-      <article class="card"><div class="eyebrow">Nov 2021 – Dec 2023</div><h3>Data Engineer</h3><strong>ADV Tech Minds Pvt. Ltd.</strong><p>Built and maintained AWS and Snowflake data workflows using Python, SQL, and PySpark, including data warehouse transformations, incremental processing, and data-quality checks.</p><p>Worked on batch analytics and streaming-oriented data engineering use cases.</p></article>
+  <section id="skills"><div class="eyebrow">02 / Skills</div><h2>Tools &amp; technologies</h2><p class="section-subtitle">The platforms and technologies I use to build, model, automate, and maintain data workflows.</p>
+    <div class="skill-grid">
+      <div class="skill-card"><h3>☁ Cloud &amp; data platforms</h3><div class="taglist"><span class="tag">Azure Data Factory</span><span class="tag">Azure Databricks</span><span class="tag">Azure Synapse</span><span class="tag">AWS</span><span class="tag">Snowflake</span><span class="tag">Redshift</span></div></div>
+      <div class="skill-card"><h3>⚙ Data engineering</h3><div class="taglist"><span class="tag">PySpark</span><span class="tag">Apache Spark</span><span class="tag">dbt</span><span class="tag">Kafka</span><span class="tag">Apache Airflow</span><span class="tag">Data Modeling</span></div></div>
+      <div class="skill-card"><h3>⌨ Programming &amp; analytics</h3><div class="taglist"><span class="tag">Python</span><span class="tag">SQL</span><span class="tag">REST APIs</span><span class="tag">Power BI</span><span class="tag">Data Quality</span></div></div>
+      <div class="skill-card"><h3>🔁 Delivery &amp; tooling</h3><div class="taglist"><span class="tag">Git</span><span class="tag">GitHub Actions</span><span class="tag">CI/CD</span><span class="tag">Docker</span><span class="tag">Terraform</span><span class="tag">MLflow</span></div></div>
     </div>
   </section>
-  <section id="projects"><div class="eyebrow">04 / Projects</div><h2>Selected work</h2><div class="grid"><article class="card"><div class="eyebrow">Featured project · Completed v1.0</div><h3>Retail Data Engineering Pipeline</h3><p>Built a reproducible batch pipeline transforming 1,000 synthetic retail orders from CSV through PySpark and Parquet into Snowflake, with dbt analytics models and data-quality tests.</p><p class="muted">Python · PySpark · Snowflake · dbt · SQL · pytest · GitHub Actions</p><p class="muted">5/5 local pipeline stages passed · 6 dbt tests passed · Independent Python/PySpark CI passed</p><a class="btn primary" href="https://github.com/bharadwajchinthala/enterprise-data-engineering-pipeline" target="_blank" rel="noopener noreferrer" aria-label="View Retail Data Engineering Pipeline on GitHub">View project on GitHub ↗</a></article><article class="card"><h3>More projects coming soon</h3><p>Additional cloud, data platform, and analytics engineering work will appear here as the portfolio grows.</p></article></div></section>
+  <section id="experience"><div class="eyebrow">03 / Experience</div><h2>My professional journey</h2><p class="section-subtitle">Building dependable data systems across healthcare and cloud data engineering.</p>
+    <div class="timeline">
+      <article class="timeline-entry"><div class="card"><div class="eyebrow">May 2025 – Present</div><h3>AI Data Engineer</h3><div class="company">Navitus Health Solutions</div><p>Develop and maintain cloud data ingestion and ETL workflows with Azure Data Factory, Databricks, Synapse Analytics, PySpark and SQL, supporting reliable analytics and business operations.</p><p>Contribute to an environment processing approximately 15–25 million records per day, and improved Databricks processing time by approximately 40% through optimization.</p></div></article>
+      <article class="timeline-entry"><div class="card"><div class="eyebrow">November 2021 – December 2023</div><h3>Data Engineer</h3><div class="company">ADV Tech Minds Pvt. Ltd.</div><p>Built and maintained AWS and Snowflake data workflows using Python, SQL and PySpark, including data warehouse transformations, incremental processing and data-quality checks.</p><p>Worked on retail analytics and streaming data engineering use cases.</p></div></article>
+    </div>
+  </section>
+  <section id="projects"><div class="eyebrow">04 / Projects</div><h2>Selected work</h2><div class="grid"><article class="card project-card"><div class="eyebrow">Featured project · Completed v1.0</div><h3>Retail Data Engineering Pipeline</h3><p>Built a reproducible batch pipeline transforming 1,000 synthetic retail orders from CSV through PySpark and Parquet into Snowflake, with dbt analytics models and data-quality tests.</p><p class="muted">Python · PySpark · Snowflake · dbt · SQL · pytest · GitHub Actions</p><p class="muted">5/5 local pipeline stages passed · 6 dbt tests passed · Independent Python/PySpark CI passed</p><a class="btn primary" href="https://github.com/bharadwajchinthala/enterprise-data-engineering-pipeline" target="_blank" rel="noopener noreferrer" aria-label="View Retail Data Engineering Pipeline on GitHub">View project on GitHub ↗</a></article><article class="card"><h3>More projects coming soon</h3><p>Additional cloud, data platform, and analytics engineering work will appear here as the portfolio grows.</p></article></div></section>
   <section id="contact"><div class="eyebrow">05 / Contact</div><h2>Let's connect</h2><p>Interested in discussing data engineering opportunities or technical projects?</p><div class="actions"><a class="btn primary" href="mailto:bharadwajreddy1805@gmail.com">Email me ↗</a><a class="btn" href="https://www.linkedin.com/in/bharadwajreddy-ai-dataengineer/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a class="btn" href="https://github.com/bharadwajchinthala" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div><p class="muted">Email: <a href="mailto:bharadwajreddy1805@gmail.com">bharadwajreddy1805@gmail.com</a></p></section>
 </main>
 <footer class="wrap">© <span id="year">2026</span> Bharadwaj Chinthala · Built with HTML & CSS</footer>
